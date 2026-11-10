@@ -1,0 +1,1860 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFCF7">
+
+  <title>The Elixir Clinic | Personalised Wellness & Care</title>
+  <meta name="description" content="Discover a more considered approach to wellness and personal care at The Elixir Clinic. Explore our approach and enquire about your journey.">
+  <link rel="canonical" href="https://elixirclinic.co.uk/Home">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #B08A3A;
+      --gold-dark: #806020;
+      --gold-light: #D7BD82;
+      --ivory: #FFFCF7;
+      --cream: #F6F1E7;
+      --beige: #E8DFCF;
+      --black: #000000;
+      --heading: #171613;
+      --body: #393630;
+      --muted: #777166;
+      --white: #FFFFFF;
+      --border: #E5DDCF;
+      --shadow: 0 18px 55px rgba(44, 35, 20, .09);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Manrope", Arial, sans-serif;
+      --container: 1220px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      font-family: var(--sans);
+      color: var(--body);
+      background: var(--ivory);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body, button, input, textarea {
+      font-family: var(--sans);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold-dark);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--serif);
+      color: var(--heading);
+      font-weight: 500;
+      line-height: 1.08;
+    }
+
+    h1 {
+      font-size: clamp(48px, 6.5vw, 82px);
+      letter-spacing: -1.8px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 4.6vw, 58px);
+      letter-spacing: -.8px;
+    }
+
+    h3 {
+      font-size: 29px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 112px 0;
+    }
+
+    .section-heading {
+      max-width: 690px;
+      margin-bottom: 52px;
+    }
+
+    .section-heading h2 {
+      margin: 17px 0 18px;
+    }
+
+    .section-heading p {
+      max-width: 590px;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      min-height: 54px;
+      padding: 0 27px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      transition: .25s ease;
+    }
+
+    .btn:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--heading);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      color: var(--white);
+    }
+
+    .arrow {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    /* Header */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 252, 247, .96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(176, 138, 58, .16);
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .logo-main {
+      font-family: var(--serif);
+      font-size: 35px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--heading);
+    }
+
+    .logo-sub {
+      margin-top: 7px;
+      color: var(--gold-dark);
+      font-size: 8px;
+      letter-spacing: 4px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-dark);
+    }
+
+    .nav-cta {
+      min-height: 45px;
+      padding: 0 20px;
+      font-size: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--heading);
+      font-size: 24px;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .hero-grid {
+      min-height: 690px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+      padding-top: 55px;
+      padding-bottom: 65px;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      padding: 25px 0;
+    }
+
+    .hero-copy h1 {
+      max-width: 650px;
+      margin: 24px 0;
+    }
+
+    .hero-copy h1 em {
+      color: var(--gold-dark);
+      font-style: normal;
+    }
+
+    .hero-copy > p {
+      max-width: 500px;
+      font-size: 16px;
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .hero-note {
+      margin-top: 42px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .5px;
+    }
+
+    .hero-note span {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 550px;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0 20px 0 20px;
+      overflow: hidden;
+      border-radius: 220px 220px 8px 8px;
+      background: var(--beige);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,.13));
+      pointer-events: none;
+    }
+
+    .hero-stamp {
+      position: absolute;
+      z-index: 2;
+      bottom: 42px;
+      left: -22px;
+      width: 155px;
+      height: 155px;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      text-align: center;
+      border-radius: 50%;
+      background: var(--ivory);
+      border: 1px solid var(--gold-light);
+      box-shadow: var(--shadow);
+      color: var(--gold-dark);
+      font-family: var(--serif);
+      font-size: 22px;
+      line-height: 1.05;
+    }
+
+    .hero-stamp small {
+      display: block;
+      font-family: var(--sans);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 7px;
+    }
+
+    /* Trust strip */
+
+    .trust-strip {
+      background: var(--heading);
+      padding: 26px 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
+
+    .trust-item {
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .trust-item span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--gold-light);
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* Introduction */
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .intro-image {
+      position: relative;
+      min-height: 540px;
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    .intro-image img {
+      height: 540px;
+      object-fit: cover;
+    }
+
+    .image-caption {
+      position: absolute;
+      bottom: 22px;
+      left: 22px;
+      right: 22px;
+      padding: 20px 24px;
+      background: rgba(255, 252, 247, .94);
+      color: var(--gold-dark);
+      font-family: var(--serif);
+      font-size: 23px;
+    }
+
+    .intro-copy h2 {
+      margin: 19px 0 23px;
+    }
+
+    .intro-copy p {
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 18px;
+      color: var(--gold-dark);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .text-link span {
+      font-size: 19px;
+      transition: transform .2s;
+    }
+
+    .text-link:hover span {
+      transform: translateX(5px);
+    }
+
+    /* Approach */
+
+    .approach {
+      background: var(--cream);
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .approach-copy h2 {
+      margin: 18px 0 22px;
+    }
+
+    .approach-copy p {
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    .approach-image {
+      height: 490px;
+      overflow: hidden;
+      background: var(--beige);
+    }
+
+    .approach-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Services */
+
+    .services {
+      background: var(--ivory);
+    }
+
+    .center-heading {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .center-heading .eyebrow {
+      justify-content: center;
+    }
+
+    .center-heading p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      transition: .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-image {
+      height: 245px;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .service-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.05);
+    }
+
+    .service-content {
+      padding: 28px;
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 19px;
+    }
+
+    .service-content h3 {
+      margin: 9px 0 12px;
+    }
+
+    .service-content p {
+      font-size: 13px;
+      min-height: 68px;
+    }
+
+    /* Experience */
+
+    .experience {
+      background: var(--heading);
+      color: var(--white);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .experience-image {
+      height: 490px;
+      overflow: hidden;
+      background: #343027;
+    }
+
+    .experience-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .experience-copy .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .experience-copy h2 {
+      color: var(--white);
+      margin: 20px 0 24px;
+    }
+
+    .experience-copy p {
+      color: rgba(255,255,255,.68);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .experience-copy .btn {
+      margin-top: 15px;
+    }
+
+    /* Journey */
+
+    .journey {
+      background: var(--cream);
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .journey-card {
+      padding: 30px 28px;
+      border-top: 1px solid var(--gold);
+    }
+
+    .journey-number {
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 44px;
+    }
+
+    .journey-card h3 {
+      margin: 9px 0 13px;
+    }
+
+    .journey-card p {
+      font-size: 13px;
+    }
+
+    /* FAQ */
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+    }
+
+    .faq-intro h2 {
+      margin: 18px 0;
+    }
+
+    .faq-intro p {
+      font-size: 14px;
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 23px 0;
+      border: 0;
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--heading);
+      text-align: left;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .faq-icon {
+      color: var(--gold-dark);
+      font-size: 22px;
+      transition: transform .2s;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 35px 22px 0;
+      font-size: 13px;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Contact */
+
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+    .contact-copy h2 {
+      margin: 18px 0;
+    }
+
+    .contact-copy p {
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .contact-form {
+      padding: 40px;
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--heading);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      min-height: 49px;
+      padding: 13px 14px;
+      outline: none;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--body);
+      font-size: 13px;
+    }
+
+    .form-group textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+    }
+
+    .form-disclaimer {
+      margin-top: 14px;
+      font-size: 10px;
+    }
+
+    /* CTA */
+
+    .final-cta {
+      padding: 85px 0;
+      text-align: center;
+      background: var(--ivory);
+    }
+
+    .final-cta h2 {
+      max-width: 720px;
+      margin: 17px auto 20px;
+    }
+
+    .final-cta p {
+      max-width: 560px;
+      margin: 0 auto 27px;
+      font-size: 14px;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding: 70px 0 25px;
+      background: var(--heading);
+      color: var(--white);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 65px;
+      padding-bottom: 50px;
+    }
+
+    .footer .logo-main {
+      color: var(--white);
+    }
+
+    .footer-description {
+      max-width: 350px;
+      margin-top: 20px;
+      color: rgba(255,255,255,.6);
+      font-size: 12px;
+    }
+
+    .footer h4 {
+      margin-bottom: 19px;
+      color: var(--gold-light);
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 11px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: rgba(255,255,255,.48);
+      font-size: 10px;
+    }
+
+    /* Image fallback */
+
+    .image-fallback {
+      display: grid;
+      place-items: center;
+      min-height: 100%;
+      width: 100%;
+      padding: 30px;
+      background:
+        radial-gradient(circle at 70% 25%, rgba(215,189,130,.35), transparent 35%),
+        linear-gradient(135deg, #F6F1E7, #E8DFCF);
+      color: #806020;
+      text-align: center;
+    }
+
+    .image-fallback span {
+      font-family: var(--serif);
+      font-size: 30px;
+    }
+
+    .image-fallback small {
+      display: block;
+      margin-top: 8px;
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 17px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .intro-grid,
+      .approach-grid,
+      .experience-grid,
+      .contact-grid {
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .section {
+        padding: 80px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav {
+        min-height: 75px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 24px 22px;
+        background: var(--ivory);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 13px 0;
+        font-size: 12px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        padding-top: 65px;
+      }
+
+      .hero-copy {
+        padding: 0;
+      }
+
+      .hero-visual {
+        min-height: 460px;
+        max-width: 560px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .hero-photo {
+        inset: 0 15px 0 15px;
+      }
+
+      .intro-grid,
+      .approach-grid,
+      .experience-grid,
+      .faq-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-image {
+        order: 2;
+      }
+
+      .intro-image img {
+        height: 430px;
+      }
+
+      .approach-image,
+      .experience-image {
+        height: 420px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .faq-grid {
+        gap: 35px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 34px, var(--container));
+      }
+
+      .section {
+        padding: 66px 0;
+      }
+
+      .logo-main {
+        font-size: 30px;
+      }
+
+      h1 {
+        font-size: 49px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .hero-grid {
+        min-height: auto;
+        padding-top: 48px;
+        padding-bottom: 55px;
+      }
+
+      .hero-copy > p {
+        font-size: 14px;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 390px;
+      }
+
+      .hero-stamp {
+        width: 120px;
+        height: 120px;
+        left: -7px;
+        bottom: 20px;
+        font-size: 18px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 19px;
+      }
+
+      .trust-item span {
+        font-size: 21px;
+      }
+
+      .intro-image,
+      .intro-image img {
+        min-height: 360px;
+        height: 360px;
+      }
+
+      .approach-image,
+      .experience-image {
+        height: 340px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-image {
+        height: 230px;
+      }
+
+      .service-content p {
+        min-height: auto;
+      }
+
+      .journey-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .journey-card {
+        padding: 24px 18px;
+      }
+
+      .contact-form {
+        padding: 25px 19px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+
+      <a href="#home" class="logo" aria-label="The Elixir Clinic home">
+        <span class="logo-main">elixir</span>
+        <span class="logo-sub">The Clinic</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#approach">Our Approach</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#journey">Your Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn nav-cta">Make an Enquiry <span class="arrow">↗</span></a>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+          <span class="eyebrow">A more considered approach to wellbeing</span>
+
+          <h1>
+            Discover your
+            <em>personal</em>
+            path to wellbeing.
+          </h1>
+
+          <p>
+            A thoughtful approach to personal care, wellbeing and confidence.
+            Discover an experience centred around your individual needs,
+            your goals and the things that matter to you.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn">Start Your Journey <span class="arrow">↗</span></a>
+            <a href="#about" class="btn btn-outline">Discover Elixir</a>
+          </div>
+
+          <div class="hero-note">
+            <span></span>
+            Personal attention. A considered experience.
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo">
+            <img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1500&q=85"
+              alt="Healthcare professional in a modern clinical environment"
+              fetchpriority="high"
+              decoding="async">
+          </div>
+
+          <div class="hero-stamp">
+            A more personal experience
+            <small>The Elixir Clinic</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip">
+      <div class="container trust-grid">
+
+        <div class="trust-item">
+          <span>Personal</span>
+          Care centred around you
+        </div>
+
+        <div class="trust-item">
+          <span>Considered</span>
+          An individual approach
+        </div>
+
+        <div class="trust-item">
+          <span>Wellbeing</span>
+          A focus on your goals
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container intro-grid">
+
+        <div class="intro-image">
+          <img
+            src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=85"
+            alt="Medical professional providing attentive care"
+            loading="lazy"
+            decoding="async">
+
+          <div class="image-caption">
+            Care begins with understanding.
+          </div>
+        </div>
+
+        <div class="intro-copy">
+          <span class="eyebrow">Welcome to Elixir</span>
+
+          <h2>
+            Your wellbeing deserves a more personal approach.
+          </h2>
+
+          <p>
+            Every individual has different needs, priorities and expectations.
+            A meaningful care experience starts by understanding those
+            differences rather than taking a one-size-fits-all approach.
+          </p>
+
+          <p>
+            The Elixir Clinic concept is built around a considered experience,
+            where personal attention and clear communication help guide
+            each individual's next steps.
+          </p>
+
+          <p>
+            Explore the clinic, learn about the approach and get in touch
+            to discuss the options relevant to your needs.
+          </p>
+
+          <a href="#approach" class="text-link">
+            Discover our approach <span>→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- APPROACH -->
+    <section class="section approach" id="approach">
+      <div class="container approach-grid">
+
+        <div class="approach-copy">
+          <span class="eyebrow">The Elixir approach</span>
+
+          <h2>
+            Thoughtful care. A more considered experience.
+          </h2>
+
+          <p>
+            A positive experience begins with listening. Understanding
+            your concerns, preferences and expectations helps create
+            a clearer starting point for your personal journey.
+          </p>
+
+          <p>
+            We believe that people should feel informed and comfortable
+            when exploring their care options. Clear information and
+            individual attention should be part of every conversation.
+          </p>
+
+          <p>
+            Get in touch to discuss your needs and find out more about
+            the services available.
+          </p>
+
+          <a href="#contact" class="btn">Talk to the Clinic <span class="arrow">↗</span></a>
+        </div>
+
+        <div class="approach-image">
+          <img
+            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1300&q=85"
+            alt="Calm and welcoming healthcare interior"
+            loading="lazy"
+            decoding="async">
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+      <div class="container">
+
+        <div class="section-heading center-heading">
+          <span class="eyebrow">Explore your options</span>
+
+          <h2>
+            Discover a more individual approach to care.
+          </h2>
+
+          <p>
+            Explore the areas of care and support available.
+            Contact the clinic for accurate service details,
+            suitability and appointment information.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1000&q=85"
+                alt="Wellness and personal care"
+                loading="lazy"
+                decoding="async">
+            </div>
+
+            <div class="service-content">
+              <span class="service-number">01</span>
+              <h3>Wellbeing</h3>
+              <p>
+                Explore personal wellbeing options and discuss
+                the approach that may be appropriate for your goals.
+              </p>
+              <a href="#contact" class="text-link">Make an enquiry <span>→</span></a>
+            </div>
+          </article>
+
+
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1000&q=85"
+                alt="Professional skincare and aesthetic care"
+                loading="lazy"
+                decoding="async">
+            </div>
+
+            <div class="service-content">
+              <span class="service-number">02</span>
+              <h3>Skin & Aesthetic Care</h3>
+              <p>
+                Find out about personal skin and aesthetic care options
+                through an informed and individual consultation.
+              </p>
+              <a href="#contact" class="text-link">Make an enquiry <span>→</span></a>
+            </div>
+          </article>
+
+
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=85"
+                alt="Healthcare consultation"
+                loading="lazy"
+                decoding="async">
+            </div>
+
+            <div class="service-content">
+              <span class="service-number">03</span>
+              <h3>Personal Consultations</h3>
+              <p>
+                Start with a conversation about your needs, expectations
+                and the options you would like to explore.
+              </p>
+              <a href="#contact" class="text-link">Make an enquiry <span>→</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section class="section experience">
+      <div class="container experience-grid">
+
+        <div class="experience-image">
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1300&q=85"
+            alt="Relaxing professional wellness treatment environment"
+            loading="lazy"
+            decoding="async">
+        </div>
+
+        <div class="experience-copy">
+          <span class="eyebrow">The experience</span>
+
+          <h2>
+            Feel informed, comfortable and confident in your next step.
+          </h2>
+
+          <p>
+            Choosing a care provider is a personal decision. You deserve
+            the opportunity to ask questions, understand your options
+            and make decisions with the information you need.
+          </p>
+
+          <p>
+            Our approach to the experience is centred on clear
+            communication and helping you understand what to expect.
+          </p>
+
+          <a href="#contact" class="btn">
+            Get in Touch <span class="arrow">↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- JOURNEY -->
+    <section class="section journey" id="journey">
+      <div class="container">
+
+        <div class="section-heading center-heading">
+          <span class="eyebrow">Your journey</span>
+          <h2>A clear place to begin.</h2>
+          <p>
+            Take the next step at a pace that feels right.
+            Start a conversation and learn more about your options.
+          </p>
+        </div>
+
+        <div class="journey-grid">
+
+          <div class="journey-card">
+            <div class="journey-number">01</div>
+            <h3>Get in Touch</h3>
+            <p>
+              Contact the clinic with your enquiry and let the team
+              know what you would like to discuss.
+            </p>
+          </div>
+
+          <div class="journey-card">
+            <div class="journey-number">02</div>
+            <h3>Discuss Your Needs</h3>
+            <p>
+              Share your priorities and ask questions about the
+              available options and next steps.
+            </p>
+          </div>
+
+          <div class="journey-card">
+            <div class="journey-number">03</div>
+            <h3>Explore Your Options</h3>
+            <p>
+              Understand the information provided and decide
+              how you would like to proceed.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq-grid">
+
+        <div class="faq-intro">
+          <span class="eyebrow">Helpful information</span>
+          <h2>Questions before you begin?</h2>
+          <p>
+            Starting a conversation is a simple way to learn more
+            about the clinic and the options available.
+          </p>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How can I enquire about the clinic?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Use the enquiry form on this page to contact the clinic.
+              Add a short message explaining what you would like to know.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How do I find out which service is suitable for me?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Contact the clinic to discuss your individual needs.
+              A suitable option should be considered in light of
+              your circumstances and any relevant professional assessment.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can I ask questions before making an appointment?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. You can use the enquiry form to ask about services,
+              appointment arrangements and any other relevant information.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Where can I find treatment and pricing information?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Contact the clinic directly for current service details,
+              pricing, availability and appointment information.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-copy">
+          <span class="eyebrow">Start a conversation</span>
+
+          <h2>
+            Your next step starts with a conversation.
+          </h2>
+
+          <p>
+            Have a question or want to find out more?
+            Send an enquiry and let the clinic know how it can help.
+          </p>
+
+          <p>
+            Please include the subject of your enquiry so that
+            your message can be directed appropriately.
+          </p>
+
+          <a href="#home" class="text-link">Back to top <span>↑</span></a>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Your email address" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Enquiry Subject</label>
+            <select id="subject" name="subject" required>
+              <option value="">Choose an enquiry type</option>
+              <option value="General enquiry">General enquiry</option>
+              <option value="Services">Services</option>
+              <option value="Appointments">Appointments</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn">
+            Prepare Enquiry <span class="arrow">↗</span>
+          </button>
+
+          <p class="form-disclaimer">
+            This demonstration form does not send or store submissions.
+            Connect it to the clinic's approved enquiry system before launch.
+          </p>
+
+        </form>
+
+      </div>
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <span class="eyebrow">The Elixir Clinic</span>
+
+        <h2>
+          Make space for a more personal approach to wellbeing.
+        </h2>
+
+        <p>
+          Get in touch to learn more, ask questions and explore
+          the next step in your journey.
+        </p>
+
+        <a href="#contact" class="btn">
+          Contact the Clinic <span class="arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <span class="logo-main">elixir</span>
+            <span class="logo-sub">The Clinic</span>
+          </a>
+
+          <p class="footer-description">
+            A considered approach to personal care and wellbeing.
+            Contact the clinic to learn more about its services
+            and appointment arrangements.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#approach">Our Approach</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#journey">Your Journey</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Information</h4>
+          <ul class="footer-links">
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> The Elixir Clinic. All rights reserved.</span>
+        <span>Designed with care.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen ? "&times;" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = "☰";
+      });
+    });
+
+
+    // FAQ accordion
+    document.querySelectorAll(".faq-question").forEach(button => {
+      button.addEventListener("click", () => {
+        const item = button.closest(".faq-item");
+        const isActive = item.classList.contains("active");
+
+        document.querySelectorAll(".faq-item").forEach(otherItem => {
+          otherItem.classList.remove("active");
+          otherItem.querySelector(".faq-question")
+            .setAttribute("aria-expanded", "false");
+        });
+
+        if (!isActive) {
+          item.classList.add("active");
+          button.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+
+    // Image error handling
+    // If a remote photo fails, show a designed visual fallback.
+    const fallbackSVG = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+        <defs>
+          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#F6F1E7"/>
+            <stop offset="100%" stop-color="#E8DFCF"/>
+          </linearGradient>
+          <radialGradient id="glow">
+            <stop offset="0%" stop-color="#D7BD82" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="#D7BD82" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1200" height="900" fill="url(#bg)"/>
+        <circle cx="850" cy="220" r="330" fill="url(#glow)"/>
+        <circle cx="300" cy="720" r="250" fill="url(#glow)"/>
+        <text x="600" y="440" text-anchor="middle" fill="#806020"
+          font-family="Georgia,serif" font-size="68">elixir</text>
+        <text x="600" y="500" text-anchor="middle" fill="#806020"
+          font-family="Arial,sans-serif" font-size="20" letter-spacing="10">THE CLINIC</text>
+      </svg>
+    `;
+
+    const fallbackImage = "data:image/svg+xml;charset=UTF-8," +
+      encodeURIComponent(fallbackSVG);
+
+    document.querySelectorAll("img").forEach(img => {
+      img.addEventListener("error", function () {
+        if (this.dataset.fallbackApplied) return;
+
+        this.dataset.fallbackApplied = "true";
+        this.src = fallbackImage;
+        this.alt = "Elixir Clinic visual placeholder";
+      }, { once: true });
+    });
+
+
+    // Contact form demonstration
+    // Replace this with the real clinic form endpoint before publishing.
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const subject = document.getElementById("subject").value;
+      const message = document.getElementById("message").value.trim();
+
+      const emailBody =
+        "Name: " + firstName + " " + lastName + "\n" +
+        "Email: " + email + "\n" +
+        "Phone: " + phone + "\n" +
+        "Subject: " + subject + "\n\n" +
+        message;
+
+      const mailto =
+        "mailto:?subject=" + encodeURIComponent("Clinic enquiry: " + subject) +
+        "&body=" + encodeURIComponent(emailBody);
+
+      window.location.href = mailto;
+    });
+
+
+    // Current year
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
